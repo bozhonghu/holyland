@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+    .center_pls
+        h1 
+            |What's your guess?
+            br
+            |This is attempt number #{old_guess_num}!
+        form(action='/puzzle/wrong',method='post',name='youwrong',enctype='application/x-www-form-urlencoded')
+            p
+                input#inputGuess(type="text", name="guess")
+            p 
+                input(type='hidden', value='#{old_guess_num}',name='guess_num')
+            p
+                button#btnSubmit(type="submit") submit

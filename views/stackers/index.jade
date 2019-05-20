@@ -1,0 +1,40 @@
+extends ../layout
+
+block content
+    h1.
+         #{title}
+    p   
+        a(href='/stackers/new') New Stacker
+    p   
+        a(href='/stackers/qr') QR Code!
+    div 
+        select(name='Team', id='selected_team')
+            option(value='', selected='', disabled='', hidden='') Team
+            - each team, i in allTeams
+                option(value=team) #{team}
+        &emsp;
+        select(name='Team2', id='selected_team')
+            option(value='', selected='', disabled='', hidden='') Team 2
+            - each team, i in allTeams
+                option(value=team) #{team}
+    .stackerTable
+        ul
+            - each stacker, i in stackers
+                li
+                    = "Team " + stacker.team
+                    br
+                    = "Agent " + stacker.name
+                    br 
+                    = "Points: " + stacker.points
+                    br 
+                    = "Id: " + stacker._id
+                    form(action='/stackers/#{stacker._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
+                        input(type='hidden',value='DELETE',name='_method')
+                        button(type='submit').
+                            Delete
+                    p 
+                        a(href='/stackers/#{stacker._id}/edit') Edit
+                    p   
+                        a(href='/stackers/#{stacker._id}/editPoints') Edit Points
+                    p
+                        a(href='/stackers/#{stacker._id}') Show

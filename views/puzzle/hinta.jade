@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+    .center_pls
+        h1 
+            |You've tried a fake and useless puzzle #{old_guess_num - 1} times!
+        form#formAddStacker(name="new_guess",method="post",action="/puzzle")
+            p 
+                input(type='hidden',value='#{old_guess_num}',name='guess_num')
+            p 
+                input(type='hidden',value='true',name='flag')
+            p
+                button#btnSubmit(type="submit") Take me back to the home page like the fool I am

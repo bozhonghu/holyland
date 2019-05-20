@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+    .center_pls
+        h1
+            |Wow y'all really suck! Have a hint.
+        form#formAddStacker(name="hinta",method="post",action="/puzzle/hinta")
+            p 
+                input(type='hidden',value='#{old_guess_num}',name='guess_num')
+            p   
+                input(type='hidden',value='milfsquad',name='password')
+            p
+                button#btnSubmit(type="submit") Hint A
+        form#formAddStacker(name="hintb",method="post",action="/puzzle/hintb")
+            p 
+                input(type='hidden',value='#{old_guess_num}',name='guess_num')
+            p   
+                input(type='hidden',value='milfsquad',name='password')
+            p
+                button#btnSubmit(type="submit") Hint B

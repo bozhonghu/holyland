@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    h1.
+        Stacker #{stacker._id}
+    p Team: #{stacker.team}
+    p Name: #{stacker.name}
+    p Points: #{stacker.points}
+    p
+        a(href='/stackers/') Home
+    
+    // This is where our QRCode will appear in.
+    #qrcode
+    script(type='text/javascript', src='/javascripts/qrcode.js')
+    script(type='text/javascript', src='/javascripts/html5-qrcode.js')
+    script(type='text/javascript').
+      function showQRCode2(text) {
+      var element = document.getElementById("qrcode");
+      var bodyElement = document.body;
+      element.appendChild(showQRCode(text));
+      }
+      showQRCode2(location.hostname + '/stackers/#{stacker._id}/edit');
+    
