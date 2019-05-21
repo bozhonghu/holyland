@@ -85,7 +85,7 @@ router.route('/guessB')
         res.render('puzzle/index', { old_guess_num: 1 });
     })
     .post(function(req, res) {
-        if (req.body.password != null && req.body.guess.toLowerCase() == 'jeongyeon with long hair')
+        if (req.body.password != null && req.body.guess.toLowerCase() == 'jeongyeon')
             res.render('puzzle/reallyWrong', {old_guess_num: req.body.guess_num});
         else if (req.body.password != null)
             res.render('puzzle/wrong', {old_guess_num: parseInt(req.body.guess_num, 10) + 1});
@@ -121,7 +121,7 @@ router.route('/guessJ')
         res.render('puzzle/index', { old_guess_num: 1 });
     })
     .post(function(req, res) {
-        if (req.body.password != null && req.body.guess.toLowerCase() == 'tf2')
+        if (req.body.password != null && req.body.guess.toLowerCase() == 'mill rogue')
             res.render('puzzle/reallyWrong', {old_guess_num: req.body.guess_num});
         else if (req.body.password != null)
             res.render('puzzle/wrong', {old_guess_num: parseInt(req.body.guess_num, 10) + 1});
