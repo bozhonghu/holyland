@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+    .center_pls
+        h1 
+            |What game does Josh play the most?
+            br
+            |Answer correctly for your hint!
+        form(action='/puzzle/guessJ',method='post',name='youwrong',enctype='application/x-www-form-urlencoded')
+            p
+                input#inputGuess(type="text", name="guess")
+            p 
+                input(type='hidden', value='#{old_guess_num}',name='guess_num')
+            p   
+                input(type='hidden',value='milfsquad',name='password')
+            p
+                button#btnSubmit(type="submit") submit

@@ -36,6 +36,36 @@ router.route('/hintb')
         else 
             res.render('puzzle/index', { old_guess_num: 1 });
     });
+router.route('/hintp')
+    .get(function(req, res, next) {
+        res.render('puzzle/index', { old_guess_num: 1 });
+    })
+    .post(function(req, res) {
+        if (req.body.password != null)
+            res.render('puzzle/hintp', {old_guess_num: req.body.guess_num});
+        else 
+            res.render('puzzle/index', { old_guess_num: 1 });
+    });
+router.route('/hintj')
+    .get(function(req, res, next) {
+        res.render('puzzle/index', { old_guess_num: 1 });
+    })
+    .post(function(req, res) {
+        if (req.body.password != null)
+            res.render('puzzle/hintj', {old_guess_num: req.body.guess_num});
+        else 
+            res.render('puzzle/index', { old_guess_num: 1 });
+    });
+    router.route('/hints')
+    .get(function(req, res, next) {
+        res.render('puzzle/index', { old_guess_num: 1 });
+    })
+    .post(function(req, res) {
+        if (req.body.password != null)
+            res.render('puzzle/hints', {old_guess_num: req.body.guess_num});
+        else 
+            res.render('puzzle/index', { old_guess_num: 1 });
+    });
 router.route('/wrong')
     .post(function(req, res) {
         res.render('puzzle/wrong', {old_guess_num: parseInt(req.body.guess_num, 10) + 1});
@@ -56,6 +86,42 @@ router.route('/guessB')
     })
     .post(function(req, res) {
         if (req.body.password != null && req.body.guess.toLowerCase() == 'jeongyeon with long hair')
+            res.render('puzzle/reallyWrong', {old_guess_num: req.body.guess_num});
+        else if (req.body.password != null)
+            res.render('puzzle/wrong', {old_guess_num: parseInt(req.body.guess_num, 10) + 1});
+        else 
+            res.render('puzzle/index', { old_guess_num: 1 });
+    });
+router.route('/guessP')
+    .get(function(req, res, next) {
+        res.render('puzzle/index', { old_guess_num: 1 });
+    })
+    .post(function(req, res) {
+        if (req.body.password != null && req.body.guess.toLowerCase() == 'kawhi leonard')
+            res.render('puzzle/reallyWrong', {old_guess_num: req.body.guess_num});
+        else if (req.body.password != null)
+            res.render('puzzle/wrong', {old_guess_num: parseInt(req.body.guess_num, 10) + 1});
+        else 
+            res.render('puzzle/index', { old_guess_num: 1 });
+    });
+router.route('/guessS')
+    .get(function(req, res, next) {
+        res.render('puzzle/index', { old_guess_num: 1 });
+    })
+    .post(function(req, res) {
+        if (req.body.password != null && req.body.guess.toLowerCase() == 'red')
+            res.render('puzzle/reallyWrong', {old_guess_num: req.body.guess_num});
+        else if (req.body.password != null)
+            res.render('puzzle/wrong', {old_guess_num: parseInt(req.body.guess_num, 10) + 1});
+        else 
+            res.render('puzzle/index', { old_guess_num: 1 });
+    });
+router.route('/guessJ')
+    .get(function(req, res, next) {
+        res.render('puzzle/index', { old_guess_num: 1 });
+    })
+    .post(function(req, res) {
+        if (req.body.password != null && req.body.guess.toLowerCase() == 'tf2')
             res.render('puzzle/reallyWrong', {old_guess_num: req.body.guess_num});
         else if (req.body.password != null)
             res.render('puzzle/wrong', {old_guess_num: parseInt(req.body.guess_num, 10) + 1});

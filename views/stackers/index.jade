@@ -1,22 +1,13 @@
 extends ../layout
 
 block content
-    h1.
-         #{title}
-    p   
-        a(href='/stackers/new') New Stacker
-    p   
-        a(href='/stackers/qr') QR Code!
-    div 
-        select(name='Team', id='selected_team')
-            option(value='', selected='', disabled='', hidden='') Team
-            - each team, i in allTeams
-                option(value=team) #{team}
-        &emsp;
-        select(name='Team2', id='selected_team')
-            option(value='', selected='', disabled='', hidden='') Team 2
-            - each team, i in allTeams
-                option(value=team) #{team}
+    center
+        h1.
+            #{title}
+        p   
+            a(href='/stackers/new') New Stacker
+        p   
+            a(href='/stackers/tools/editTeam') Edit Team Points
     .stackerTable
         ul
             - each stacker, i in stackers
@@ -32,9 +23,4 @@ block content
                         input(type='hidden',value='DELETE',name='_method')
                         button(type='submit').
                             Delete
-                    p 
-                        a(href='/stackers/#{stacker._id}/edit') Edit
-                    p   
-                        a(href='/stackers/#{stacker._id}/editPoints') Edit Points
-                    p
-                        a(href='/stackers/#{stacker._id}') Show
+                    a(href='/stackers/#{stacker._id}/editPoints') Edit Points
