@@ -24,6 +24,7 @@ router.route('/')
             if (err) {
                 return console.error(err);
             } else {
+                stackers.sort((a, b) => (a.team > b.team) ? 1 : -1)
                 res.format({
                     //HTML response will render the index.jade file in the views/Stackers folder. We are also setting "Stackers" to be an accessible variable in our jade view
                     html: function () {
