@@ -1,23 +1,24 @@
 extends ../layout
 
 block content
-    h1.
-        #{title}
-    form(action='/stackers/tools/editTeam',method='post',name='updateteam',enctype='application/x-www-form-urlencoded')
-        p Team: 
-            select(name='team', id='selected_team')
-                option(value='', selected='', disabled='', hidden='')
-                - each team, i in allTeams
-                    option(value=team) #{team}
-        p Plus Points: 
-            input#inputPoints(type='number', min="0", step=100, value=0, name='plus_points')
-        p Minus Points: 
-            input#subPoints(type='number', min="0", step=100, value=0, name='minus_points')
-        p Password: 
-            input#inputThing(type='text', name='goat')
-        p 
-            input(type='hidden',value='PUT',name='_method') 
-        p 
-            button#btnSubmit(type='submit').
-                Update
-    a(href='/stackers') Home
+    .center_pls
+        h1.
+            #{title}
+        form(action='/stackers/tools/editTeam',method='post',name='updateteam',enctype='application/x-www-form-urlencoded')
+            p Team: 
+                select(name='team', id='selected_team')
+                    option(value='', selected='', disabled='', hidden='')
+                    - each team, i in allTeams
+                        option(value=team) #{team}
+            p Plus Points: 
+                input#inputPoints(type='number', min="0", step=100, value=0, name='plus_points')
+            p Minus Points: 
+                input#subPoints(type='number', min="0", step=100, value=0, name='minus_points')
+            p Password: 
+                input#inputThing(type='text', name='goat')
+            p 
+                input(type='hidden',value='PUT',name='_method') 
+            p 
+                button#btnSubmit(type='submit').
+                    Update
+        a(href='/stackers') Home
