@@ -1,14 +1,15 @@
 extends ../layout
 
 block content
-    h1.
-        #{title}
-    form#formAddStacker(name="addstacker",method="post",action="/stackers")
-        p Team: 
-            input#inputTeam(type="text", name="team")
-        p Name: 
-            input#inputName(type="text", placeholder="ex. Ham", name="name")
-        p Points: 
-            input#inputPoints(type="number", value=0, name="points")
-        p
-            button#btnSubmit(type="submit") submit
+    .center_pls
+        h1.
+            #{title}
+        form#formAddStacker(name="addstacker",method="post",action="/stackers")
+            p Team: 
+                input#inputTeam(type="text", name="team")
+            p Name: 
+                input#inputName(type="text", placeholder="ex. Ham", name="name")
+            p Points: 
+                input#inputPoints(type="number", value=0, name="points")
+            p
+                button#btnSubmit(type="submit") submit
