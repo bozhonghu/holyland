@@ -109,7 +109,7 @@ router.route('/guessS')
         res.render('puzzle/index', { old_guess_num: 1 });
     })
     .post(function(req, res) {
-        if (req.body.password != null && req.body.guess.toLowerCase() == 'red')
+        if (req.body.password != null && req.body.guess.toLowerCase() == 'latte')
             res.render('puzzle/reallyWrong', {old_guess_num: req.body.guess_num});
         else if (req.body.password != null)
             res.render('puzzle/wrong', {old_guess_num: parseInt(req.body.guess_num, 10) + 1});
