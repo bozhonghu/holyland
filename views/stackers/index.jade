@@ -17,8 +17,6 @@ block content
                     = "Agent " + stacker.name
                     br 
                     = "Points: " + stacker.points
-                    br 
-                    = "Id: " + stacker._id
                     form(action='/stackers/#{stacker._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
                         input(type='hidden',value='DELETE',name='_method')
                         button(type='submit').
