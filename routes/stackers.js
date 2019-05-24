@@ -224,7 +224,7 @@ router.put('/:id/editPoints', function (req, res) {
                     //HTML responds by going back to the page or you can be fancy and create a new view that shows a success page.
                     res.format({
                         html: function () {
-                            res.redirect("/stackers/" + stacker._id);
+                            res.redirect("/stackers/");
                         },
                         //JSON responds showing the updated values
                         json: function () {
