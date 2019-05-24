@@ -212,6 +212,7 @@ router.put('/:id/editPoints', function (req, res) {
             });
         } else {
             //update it
+            console.log(stacker.points);
             stacker.update({
                 points: stacker.points + plus_points - minus_points
             }, function (err, stackerID) {
